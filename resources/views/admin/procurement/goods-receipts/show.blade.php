@@ -1,0 +1,11 @@
+@extends('admin.layouts.app')
+
+@section('page-title', 'Goods Receipt')
+@section('page-subtitle', 'Delivery confirmation against the linked purchase order.')
+
+@section('content')
+    <div class="space-y-6">
+        <nav class="flex items-center gap-3 text-sm text-slate-400"><a href="{{ route('admin.dashboard') }}" class="hover:text-white">Admin</a><span>/</span><a href="{{ route('admin.procurement.goods-receipts.index') }}" class="hover:text-white">Goods Receipts</a><span>/</span><span class="text-white">{{ $goodsReceipt->receipt_number }}</span></nav>
+        <section class="rounded-3xl border border-white/10 bg-slate-950/50 p-6 shadow-2xl shadow-slate-950/30"><div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4"><div><p class="text-xs uppercase tracking-[0.25em] text-slate-500">Receipt</p><p class="mt-2 text-lg font-semibold text-white">{{ $goodsReceipt->receipt_number }}</p></div><div><p class="text-xs uppercase tracking-[0.25em] text-slate-500">Purchase Order</p><p class="mt-2 text-lg font-semibold text-white">{{ $goodsReceipt->purchaseOrder?->po_number }}</p></div><div><p class="text-xs uppercase tracking-[0.25em] text-slate-500">Supplier</p><p class="mt-2 text-lg font-semibold text-white">{{ $goodsReceipt->purchaseOrder?->supplier?->name }}</p></div><div><p class="text-xs uppercase tracking-[0.25em] text-slate-500">Status</p><p class="mt-2 text-lg font-semibold text-white">{{ ucfirst($goodsReceipt->status) }}</p></div></div><div class="mt-6 grid gap-6 xl:grid-cols-2"><div class="rounded-2xl border border-white/10 bg-white/5 p-5"><p class="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300">Linked Request</p><p class="mt-3 text-white">{{ $goodsReceipt->purchaseOrder?->purchaseRequest?->pr_number ?: 'No linked purchase request' }}</p><p class="mt-2 text-sm text-slate-300">{{ $goodsReceipt->purchaseOrder?->purchaseRequest?->description ?: 'No request description available.' }}</p></div><div class="rounded-2xl border border-white/10 bg-white/5 p-5"><p class="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300">Notes</p><p class="mt-3 text-sm text-slate-300">{{ $goodsReceipt->notes ?: 'No notes recorded.' }}</p></div></div></section>
+    </div>
+@endsection

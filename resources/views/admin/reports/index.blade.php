@@ -1,0 +1,12 @@
+@extends('admin.layouts.app')
+
+@section('page-title', 'Reports')
+@section('page-subtitle', 'Cross-module reporting for finance, sales, inventory and workforce snapshots.')
+
+@section('content')
+    <div class="space-y-6">
+        <nav class="flex items-center gap-3 text-sm text-slate-400"><a href="{{ route('admin.dashboard') }}" class="hover:text-white">Admin</a><span>/</span><span>Insights</span><span>/</span><span class="text-white">Reports</span></nav>
+        <div class="grid gap-4 md:grid-cols-4"><div class="rounded-3xl border border-white/10 bg-slate-950/50 p-5"><p class="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300">Period</p><p class="mt-3 text-xl font-semibold text-white">{{ $summary['month'] }}</p></div><div class="rounded-3xl border border-white/10 bg-slate-950/50 p-5"><p class="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-300">Revenue</p><p class="mt-3 text-3xl font-semibold text-white">{{ number_format((float) $summary['revenue'], 2) }}</p></div><div class="rounded-3xl border border-white/10 bg-slate-950/50 p-5"><p class="text-xs font-semibold uppercase tracking-[0.3em] text-amber-300">Expenses</p><p class="mt-3 text-3xl font-semibold text-white">{{ number_format((float) $summary['expenses'], 2) }}</p></div><div class="rounded-3xl border border-white/10 bg-slate-950/50 p-5"><p class="text-xs font-semibold uppercase tracking-[0.3em] text-fuchsia-300">Employees / Products</p><p class="mt-3 text-3xl font-semibold text-white">{{ $summary['employees'] }} / {{ $summary['products'] }}</p></div></div>
+        <div class="grid gap-6 lg:grid-cols-2">@foreach ($cards as $card)<section class="rounded-3xl border border-white/10 bg-white/6 p-6 shadow-2xl shadow-slate-950/30 backdrop-blur"><div class="flex items-start justify-between gap-4"><div><p class="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300">{{ $card['title'] }}</p><p class="mt-2 text-sm text-slate-300">{{ $card['summary'] }}</p></div><a href="{{ $card['route'] }}" class="rounded-2xl border border-cyan-400/30 bg-cyan-400/10 px-4 py-3 text-sm font-medium text-cyan-100 transition hover:bg-cyan-400/20">Open</a></div><p class="mt-6 text-3xl font-semibold text-white">{{ is_numeric($card['metric']) ? number_format((float) $card['metric'], 2) : $card['metric'] }}</p><p class="mt-1 text-sm text-slate-400">{{ $card['metricLabel'] }}</p></section>@endforeach</div>
+    </div>
+@endsection

@@ -1,0 +1,7 @@
+<svg width="150" height="50" viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sktLogoTitle">
+    <title id="sktLogoTitle">SKT Tanzania</title>
+    <rect width="150" height="50" fill="#8DB600" rx="5"/>
+    <text x="20" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">SKT</text>
+    <text x="75" y="32" font-family="Arial, sans-serif" font-size="16" fill="white">TANZANIA</text>
+    <circle cx="130" cy="25" r="8" fill="white" opacity="0.3"/>
+</svg>

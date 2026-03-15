@@ -1,0 +1,129 @@
+:root {
+    --apple-green: #8db600;
+    --apple-green-dark: #6b8c00;
+    --apple-green-light: #a8d100;
+    --apple-green-soft: #e5f2cc;
+}
+
+.brand-link .brand-image {
+    filter: brightness(0) invert(1);
+}
+
+.skt-brand-logo {
+    display: inline-block;
+    height: 50px;
+    width: auto;
+    max-width: 100%;
+}
+
+.skt-brand-logo--sm {
+    height: 40px;
+}
+
+.skt-brand-lockup {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.skt-brand-lockup--stacked {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.9rem;
+}
+
+.small-box.bg-info {
+    background-color: var(--apple-green) !important;
+}
+
+.small-box.bg-success {
+    background-color: var(--apple-green-dark) !important;
+}
+
+.small-box.bg-warning {
+    background-color: var(--apple-green-light) !important;
+}
+
+.btn-primary,
+.btn-apple-green {
+    background-color: var(--apple-green) !important;
+    border-color: var(--apple-green-dark) !important;
+    color: #fff !important;
+}
+
+.btn-primary:hover,
+.btn-apple-green:hover {
+    background-color: var(--apple-green-dark) !important;
+    border-color: var(--apple-green-dark) !important;
+    color: #fff !important;
+}
+
+.btn-outline-apple-green {
+    color: var(--apple-green) !important;
+    border-color: var(--apple-green) !important;
+}
+
+.btn-outline-apple-green:hover {
+    background-color: var(--apple-green) !important;
+    color: #fff !important;
+}
+
+.admin-shell {
+    background:
+        radial-gradient(circle at top, rgba(141, 182, 0, 0.18), transparent 35%),
+        linear-gradient(135deg, #020617 0%, #0f172a 55%, #111827 100%);
+}
+
+.admin-sidebar {
+    background-color: rgba(15, 23, 42, 0.92);
+    border-right-color: rgba(168, 209, 0, 0.18);
+}
+
+.admin-header {
+    border-bottom-color: rgba(168, 209, 0, 0.16);
+    background-color: rgba(2, 6, 23, 0.72);
+}
+
+.admin-page-kicker,
+.admin-sidebar-brand-tagline {
+    color: rgba(229, 242, 204, 0.8);
+}
+
+.admin-sidebar-brand-title,
+.admin-page-title,
+.admin-profile-name,
+.admin-sidebar-link-active,
+.admin-sidebar-group-title {
+    color: #fff;
+}
+
+.admin-profile-card,
+.admin-sidebar-group,
+.admin-sidebar-link {
+    border-color: rgba(168, 209, 0, 0.12);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.admin-profile-avatar,
+.admin-sidebar-icon {
+    background-color: rgba(141, 182, 0, 0.18);
+    color: #f7fee7;
+}
+
+.admin-sidebar-link:hover,
+.admin-sidebar-group-link:hover {
+    background-color: rgba(141, 182, 0, 0.12);
+    color: #fff;
+}
+
+.admin-sidebar-link-active,
+.admin-sidebar-group-link-active {
+    border-color: rgba(141, 182, 0, 0.32);
+    background-color: rgba(141, 182, 0, 0.18);
+}
+
+.admin-sidebar-group-badge {
+    border-color: rgba(168, 209, 0, 0.18);
+    background-color: rgba(141, 182, 0, 0.1);
+    color: rgba(229, 242, 204, 0.82);
+}

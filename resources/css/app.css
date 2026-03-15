@@ -1,0 +1,207 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@layer base {
+    :root {
+        --apple-green: #8db600;
+        --apple-green-dark: #6b8c00;
+        --apple-green-light: #a8d100;
+        --apple-green-soft: #e5f2cc;
+    }
+}
+
+@layer components {
+    .admin-shell {
+        background:
+            radial-gradient(circle at top, rgba(141, 182, 0, 0.18), transparent 35%),
+            linear-gradient(135deg, #020617 0%, #0f172a 55%, #111827 100%);
+    }
+
+    .admin-sidebar {
+        background-color: rgba(15, 23, 42, 0.92);
+        border-right-color: rgba(168, 209, 0, 0.18);
+    }
+
+    .admin-sidebar-brand-tagline {
+        color: rgba(229, 242, 204, 0.72);
+    }
+
+    .admin-sidebar-brand-title,
+    .admin-page-title,
+    .admin-profile-name,
+    .admin-sidebar-link-active,
+    .admin-sidebar-link-active .admin-sidebar-link-summary,
+    .admin-sidebar-group-title {
+        color: #fff;
+    }
+
+    .admin-sidebar-group,
+    .admin-sidebar-link,
+    .admin-profile-card {
+        border-color: rgba(168, 209, 0, 0.12);
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .admin-sidebar-icon,
+    .admin-profile-avatar {
+        background-color: rgba(141, 182, 0, 0.18);
+        color: #f7fee7;
+    }
+
+    .admin-sidebar-link:hover,
+    .admin-sidebar-group-link:hover {
+        background-color: rgba(141, 182, 0, 0.12);
+        color: #fff;
+    }
+
+    .admin-sidebar-link-active,
+    .admin-sidebar-group-link-active {
+        border-color: rgba(141, 182, 0, 0.32);
+        background-color: rgba(141, 182, 0, 0.18);
+    }
+
+    .admin-sidebar-group-link-active {
+        color: #f7fee7;
+    }
+
+    .admin-sidebar-group-badge {
+        border-color: rgba(168, 209, 0, 0.18);
+        background-color: rgba(141, 182, 0, 0.1);
+        color: rgba(229, 242, 204, 0.82);
+    }
+
+    .admin-header {
+        border-bottom-color: rgba(168, 209, 0, 0.16);
+        background-color: rgba(2, 6, 23, 0.72);
+    }
+
+    .admin-page-kicker {
+        color: rgba(229, 242, 204, 0.8);
+    }
+
+    .admin-profile-role {
+        color: rgba(226, 232, 240, 0.62);
+    }
+
+    .dashboard-hero-panel {
+        background:
+            radial-gradient(circle at top left, rgba(34, 211, 238, 0.16), transparent 32%),
+            radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.14), transparent 28%),
+            linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(2, 6, 23, 0.94) 100%);
+    }
+
+    .dashboard-action-card {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(15, 23, 42, 0.42));
+    }
+
+    .dashboard-stat-orb {
+        background:
+            radial-gradient(circle at top, rgba(141, 182, 0, 0.18), transparent 40%),
+            linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(2, 6, 23, 0.82));
+    }
+
+    .dashboard-module-card {
+        background:
+            linear-gradient(160deg, rgba(15, 23, 42, 0.96), rgba(17, 24, 39, 0.92)),
+            linear-gradient(120deg, rgba(34, 211, 238, 0.08), transparent 45%);
+    }
+
+    .admin-login-shell {
+        background:
+            radial-gradient(circle at top left, rgba(141, 182, 0, 0.24), transparent 26%),
+            radial-gradient(circle at 85% 15%, rgba(34, 211, 238, 0.16), transparent 20%),
+            linear-gradient(135deg, #020617 0%, #0f172a 52%, #111827 100%);
+    }
+
+    .admin-login-card {
+        background:
+            linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(2, 6, 23, 0.92)),
+            linear-gradient(120deg, rgba(141, 182, 0, 0.1), transparent 42%);
+        box-shadow: 0 24px 90px rgba(2, 6, 23, 0.5);
+    }
+
+    .admin-login-showcase {
+        background:
+            radial-gradient(circle at top, rgba(141, 182, 0, 0.2), transparent 36%),
+            linear-gradient(160deg, rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 0.82));
+    }
+
+    .admin-login-metric {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(15, 23, 42, 0.28));
+    }
+
+    .admin-login-input {
+        border-color: rgba(168, 209, 0, 0.16);
+        background-color: rgba(15, 23, 42, 0.75);
+    }
+
+    .admin-login-input:focus {
+        border-color: rgba(141, 182, 0, 0.45);
+        box-shadow: 0 0 0 1px rgba(141, 182, 0, 0.3);
+    }
+
+    .admin-login-submit {
+        background: linear-gradient(135deg, var(--apple-green) 0%, #b9dc45 100%);
+        color: #0f172a;
+    }
+
+    .admin-login-submit:hover {
+        filter: brightness(1.02);
+    }
+
+    .btn-apple-green {
+        background-color: var(--apple-green);
+        border: 1px solid var(--apple-green-dark);
+        color: #fff;
+    }
+
+    .btn-apple-green:hover {
+        background-color: var(--apple-green-dark);
+        border-color: var(--apple-green-dark);
+        color: #fff;
+    }
+
+    .btn-outline-apple-green {
+        border: 1px solid var(--apple-green);
+        color: var(--apple-green);
+    }
+
+    .btn-outline-apple-green:hover {
+        background-color: var(--apple-green);
+        color: #fff;
+    }
+
+    .badge-apple-green {
+        background-color: var(--apple-green);
+        color: #fff;
+        padding: 0.25rem 0.625rem;
+    }
+
+    .alert-apple-green {
+        background-color: var(--apple-green-soft);
+        border: 1px solid var(--apple-green);
+        color: var(--apple-green-dark);
+    }
+
+    .text-apple-green {
+        color: var(--apple-green);
+    }
+
+    .bg-apple-green {
+        background-color: var(--apple-green);
+        color: #fff;
+    }
+
+    .border-apple-green {
+        border-color: var(--apple-green);
+    }
+}
